@@ -1,0 +1,99 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-foreground: var(--charcoal-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.235 0.006 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0.006 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0.006 270);
+  --primary: oklch(0.4 0.13 25);
+  --primary-deep: oklch(0.32 0.11 25);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.965 0 0);
+  --secondary-foreground: oklch(0.235 0.006 270);
+  --charcoal: oklch(0.235 0.006 270);
+  --charcoal-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.48 0.008 270);
+  --accent: oklch(0.94 0.02 25);
+  --accent-foreground: oklch(0.4 0.13 25);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.55 0.13 150);
+  --border: oklch(0.9 0.003 270);
+  --input: oklch(0.88 0.003 270);
+  --ring: oklch(0.4 0.13 25);
+  --gradient-overlay: linear-gradient(100deg, oklch(0.18 0.006 270 / 0.92) 0%, oklch(0.18 0.006 270 / 0.65) 50%, oklch(0.32 0.11 25 / 0.35) 100%);
+  --shadow-card: 0 20px 40px -20px oklch(0.235 0.006 270 / 0.25);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; line-height: 1.05; text-transform: uppercase; }
+}
+
+@utility container-kpc { width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: 1.25rem; @media (min-width: 768px) { padding-inline: 2rem; } }
+@utility overlay-hero { background-image: var(--gradient-overlay); }
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility eyebrow { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--color-primary); }
+@utility btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  background: var(--color-primary); color: var(--color-primary-foreground);
+  padding: 0.85rem 1.6rem; font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  border-radius: var(--radius); transition: all .25s;
+  &:hover { background: var(--color-primary-deep); transform: translateY(-2px); }
+}
+@utility btn-light {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border: 2px solid var(--color-charcoal-foreground); color: var(--color-charcoal-foreground);
+  padding: 0.75rem 1.5rem; font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  border-radius: var(--radius); transition: all .25s;
+  &:hover { background: var(--color-charcoal-foreground); color: var(--color-charcoal); }
+}
+@utility btn-dark {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border: 2px solid var(--color-charcoal); color: var(--color-charcoal);
+  padding: 0.75rem 1.5rem; font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  border-radius: var(--radius); transition: all .25s;
+  &:hover { background: var(--color-charcoal); color: var(--color-charcoal-foreground); }
+}
