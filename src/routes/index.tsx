@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Users, MessageSquare, Ruler } from "lucide-react";
-import { company, images, services } from "@/data/site";
+import { company, images, projectPhotos, services } from "@/data/site";
 import { CTASection, Reveal, SectionHeading, ServiceCard, TestimonialSection, Check } from "@/components/ui-kpc";
 import { seo } from "@/lib/seo";
 
@@ -53,6 +53,34 @@ function Home() {
         <div className="container-kpc">
           <SectionHeading eyebrow="Our Services" title="What We Build" intro="Eight core services covering everything from the roof to the basement." />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{services.map((s, i) => <ServiceCard key={s.slug} service={s} i={i} />)}</div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container-kpc">
+          <SectionHeading
+            eyebrow="Project Gallery"
+            title="Recent Work"
+            intro="A selection of completed projects and work completed by KPC."
+            center
+          />
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
+            {projectPhotos.map((photo, i) => (
+              <Reveal key={photo.src} delay={(i % 8) * 0.05}>
+                <figure className="group aspect-[4/3] overflow-hidden rounded-md bg-secondary">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link to="/gallery" className="btn-dark">View Full Gallery</Link>
+          </div>
         </div>
       </section>
 

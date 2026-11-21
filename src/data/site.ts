@@ -6,6 +6,20 @@ import fence from "@/assets/fence.jpg";
 import flooring from "@/assets/flooring.jpg";
 import commercial from "@/assets/commercial.jpg";
 import inspection from "@/assets/inspection.jpg";
+import p1 from "@/assets/p1.jpeg";
+import p2 from "@/assets/p2.jpeg";
+import p3 from "@/assets/p3.jpeg";
+import p4 from "@/assets/p4.jpeg";
+import p5 from "@/assets/p5.jpeg";
+import p6 from "@/assets/p6.jpeg";
+import p7 from "@/assets/p7.jpeg";
+import p8 from "@/assets/p8.jpeg";
+import p9 from "@/assets/p9.jpeg";
+import p10 from "@/assets/p10.jpeg";
+import p11 from "@/assets/p11.jpeg";
+import p12 from "@/assets/p12.jpeg";
+import p13 from "@/assets/p13.jpeg";
+import p14 from "@/assets/p14.jpeg";
 import { Hammer, Fence, Layers, PaintRoller, Home, Search, Wrench, Building2, type LucideIcon } from "lucide-react";
 
 export const company = {
@@ -20,6 +34,23 @@ export const company = {
 };
 
 export const images = { hero, roofing, deck, renovation, fence, flooring, commercial, inspection };
+
+export const projectPhotos = [
+  { src: p1, alt: "KPC construction project 1" },
+  { src: p2, alt: "KPC construction project 2" },
+  { src: p3, alt: "KPC construction project 3" },
+  { src: p4, alt: "KPC construction project 4" },
+  { src: p5, alt: "KPC construction project 5" },
+  { src: p6, alt: "KPC construction project 6" },
+  { src: p7, alt: "KPC construction project 7" },
+  { src: p8, alt: "KPC construction project 8" },
+  { src: p9, alt: "KPC construction project 9" },
+  { src: p10, alt: "KPC construction project 10" },
+  { src: p11, alt: "KPC construction project 11" },
+  { src: p12, alt: "KPC construction project 12" },
+  { src: p13, alt: "KPC construction project 13" },
+  { src: p14, alt: "KPC construction project 14" },
+];
 
 export type Service = { slug: string; title: string; icon: LucideIcon; image: string; short: string; description: string; benefits: string[] };
 

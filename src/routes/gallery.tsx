@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { images } from "@/data/site";
+import { images, projectPhotos } from "@/data/site";
 import { CTASection, PageHero } from "@/components/ui-kpc";
 import { seo } from "@/lib/seo";
 
@@ -11,17 +11,8 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-const items = [
-  { src: images.roofing, cat: "Roofing", alt: "Roof shingle installation" },
-  { src: images.inspection, cat: "Roofing", alt: "Roof and gutter inspection" },
-  { src: images.deck, cat: "Decks", alt: "Cedar backyard deck" },
-  { src: images.fence, cat: "Fences", alt: "Horizontal cedar privacy fence" },
-  { src: images.flooring, cat: "Flooring", alt: "Finished basement flooring" },
-  { src: images.renovation, cat: "Renovations", alt: "Renovated kitchen" },
-  { src: images.hero, cat: "Renovations", alt: "Timber-framed home construction" },
-  { src: images.commercial, cat: "Renovations", alt: "Commercial steel-frame construction" },
-];
-const cats = ["All", "Roofing", "Decks", "Fences", "Flooring", "Renovations"];
+const items = projectPhotos.map((photo) => ({ ...photo, cat: "Projects" }));
+const cats = ["All"];
 
 function Gallery() {
   const [cat, setCat] = useState("All");
@@ -41,7 +32,7 @@ function Gallery() {
       <PageHero eyebrow="Gallery" title="Our type of work" intro="A look at the kinds of projects KPC delivers." image={images.deck} />
       <section className="py-16">
         <div className="container-kpc">
-          <p className="mb-8 flex items-start gap-2 rounded-md bg-accent p-4 text-sm text-accent-foreground"><Info className="mt-0.5 h-4 w-4 shrink-0" />Images shown are illustrative construction imagery, not completed KPC projects. Real project photos will be added soon.</p>
+          <p className="mb-8 flex items-start gap-2 rounded-md bg-accent p-4 text-sm text-accent-foreground"><Info className="mt-0.5 h-4 w-4 shrink-0" />A selection of completed construction projects by KPC.</p>
           <div className="mb-8 flex flex-wrap gap-2" role="tablist">
             {cats.map((c) => <button key={c} role="tab" aria-selected={cat === c} onClick={() => setCat(c)} className={`rounded-sm px-4 py-2 font-display text-sm font-semibold uppercase tracking-wider transition-colors ${cat === c ? "bg-primary text-primary-foreground" : "bg-secondary hover:bg-accent"}`}>{c}</button>)}
           </div>
