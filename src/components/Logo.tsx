@@ -1,11 +1,11 @@
-import kpcLogo from "@/assets/kpc logo.png";
+import kpcLogo from "@/assets/new logo.png";
 
-export function Logo({ light = false }: { light?: boolean }) {
+export function Logo({ size = "default" }: { size?: "default" | "large" }) {
   return (
     <img
       src={kpcLogo}
       alt="KPC - Karanpratap Construction Ltd."
-      className={`h-16 w-auto object-contain ${light ? "brightness-110" : ""}`}
+      className={`${size === "large" ? "h-[4.75rem]" : "h-16"} w-auto object-contain`}
     />
   );
 }

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MessageCircle } from "lucide-react";
-import { Logo } from "./Logo";
+import footerLogo from "@/assets/flogo.png";
 import { company, nav, services } from "@/data/site";
 
 export function Footer() {
@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-charcoal text-charcoal-foreground">
       <div className="container-kpc grid gap-10 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
-          <Logo light />
+          <img src={footerLogo} alt="KPC - Karanpratap Construction Ltd." className="h-[4.75rem] w-auto object-contain" />
           <p className="mt-4 text-sm opacity-70">{company.name} — quality residential and commercial construction since {company.established}.</p>
         </div>
         <div>

@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
       <div className="container-kpc flex h-20 items-center justify-between gap-4">
-        <Link to="/" onClick={() => setOpen(false)}><Logo /></Link>
+        <Link to="/" onClick={() => setOpen(false)}><Logo size="large" /></Link>
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} activeOptions={{ exact: true }}
